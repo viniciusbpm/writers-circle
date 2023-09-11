@@ -1,5 +1,6 @@
 package br.ifsul.writerscircle.security.domain;
 
+import br.ifsul.writerscircle.domain.Genero;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -24,6 +25,8 @@ public class Usuario implements UserDetails {
     private String username;
     @Column(name = "email", nullable = false)
     private String email;
+    @Column(name = "bio")
+    private String bio;
     @Column(name = "senha", nullable = false)
     private String senha;
     @Column(name = "data_nascimento", nullable = false)
@@ -34,6 +37,17 @@ public class Usuario implements UserDetails {
     private String tokenSenha;
     @Column(name = "ativo", nullable = false)
     private boolean ativo;
+    @Column(name = "escritor_favorito")
+    private String escritorFavorito;
+    @Column(name = "livro_favorito")
+    private String livroFavorito;
+
+    @ManyToMany
+    @JoinTable(name = "genero_usuario",
+        joinColumns = @JoinColumn(name = "usuario_id"),
+        inverseJoinColumns = @JoinColumn(name = "genero_id"))
+    private List<Genero> generos = new ArrayList<>();
+
 
 //    @ManyToMany(mappedBy = "usuarios")
 //    private List<GeneroLiterario> preferencias = new ArrayList<>();
