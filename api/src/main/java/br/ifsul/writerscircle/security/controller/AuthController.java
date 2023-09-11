@@ -28,7 +28,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public UsuarioResponse register(@RequestBody @Valid UsuarioRequest request) {
+    public UsuarioResponse registrar(@RequestBody @Valid UsuarioRequest request) {
         return registrarUsuarioService.registrar(request);
     }
 
