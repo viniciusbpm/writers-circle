@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/generos")
+@RequestMapping("generos")
 public class GeneroController {
     @Autowired
     private ListarGenerosService listarGenerosService;
