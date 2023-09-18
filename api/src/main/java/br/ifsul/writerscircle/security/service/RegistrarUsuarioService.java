@@ -26,7 +26,7 @@ public class RegistrarUsuarioService {
     private ValidarUsernameUnicoService validarUsernameUnicoService;
 
     @Transactional
-    public UsuarioResponse registrar(@Valid UsuarioRequest request){
+    public void registrar(@Valid UsuarioRequest request){
         validarEmailUnicoService.validar(request.getEmail());
         validarUsernameUnicoService.validar(request.getUsername());
 
@@ -34,8 +34,6 @@ public class RegistrarUsuarioService {
         user.setSenha(passwordEncoder.encode(request.getSenha()));
 
         usuarioRepository.save(user);
-
-        return toResponse(user);
     }
 
 }
