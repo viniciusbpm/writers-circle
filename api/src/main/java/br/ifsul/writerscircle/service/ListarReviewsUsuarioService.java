@@ -6,7 +6,6 @@ import br.ifsul.writerscircle.mapper.ReviewMapper;
 import br.ifsul.writerscircle.repository.ReviewRepository;
 import br.ifsul.writerscircle.security.domain.Usuario;
 import br.ifsul.writerscircle.security.service.BuscarUsuarioService;
-import br.ifsul.writerscircle.security.service.GetUsuarioAutenticadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

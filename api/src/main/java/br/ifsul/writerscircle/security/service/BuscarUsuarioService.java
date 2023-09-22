@@ -3,7 +3,6 @@ package br.ifsul.writerscircle.security.service;
 import br.ifsul.writerscircle.security.domain.Usuario;
 import br.ifsul.writerscircle.security.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 

@@ -57,6 +57,11 @@ public class Usuario implements UserDetails {
         review.setUsuario(this);
     }
 
+    public void removerReview(Review review){
+        this.reviews.remove(review);
+        review.setUsuario(null);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
