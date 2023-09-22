@@ -14,8 +14,8 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 public class BuscarUsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
-    private static String MENSAGEM_USUARIO_NAO_ENCONTRADO = "Usuário não encontrado";
-    public Usuario buscar(Long id){
+    private static final String MENSAGEM_USUARIO_NAO_ENCONTRADO = "Usuário não encontrado";
+    public Usuario porId(Long id){
         Optional<Usuario> usuario = usuarioRepository.findById(id);
 
         if(usuario.isPresent()){

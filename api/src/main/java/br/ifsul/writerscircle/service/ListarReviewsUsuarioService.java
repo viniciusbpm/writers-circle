@@ -21,7 +21,7 @@ public class ListarReviewsUsuarioService {
     private BuscarUsuarioService buscarUsuarioService;
 
     public List<ReviewResponse> listar(Long idUsuario){
-        Usuario usuario = buscarUsuarioService.buscar(idUsuario);
+        Usuario usuario = buscarUsuarioService.porId(idUsuario);
 
         List<Review> reviews = reviewRepository.findAllByUsuarioEquals(usuario);
 
