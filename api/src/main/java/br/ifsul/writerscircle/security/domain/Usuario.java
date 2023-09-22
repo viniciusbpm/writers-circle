@@ -1,6 +1,7 @@
 package br.ifsul.writerscircle.security.domain;
 
 import br.ifsul.writerscircle.domain.Genero;
+import br.ifsul.writerscircle.domain.Obra;
 import br.ifsul.writerscircle.domain.Review;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -51,15 +52,24 @@ public class Usuario implements UserDetails {
 
     @OneToMany(mappedBy = "usuario")
     private List<Review> reviews = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario")
+    private List<Obra> obras = new ArrayList<>();
 
     public void adicionarReview(Review review){
         this.reviews.add(review);
         review.setUsuario(this);
     }
-
     public void removerReview(Review review){
         this.reviews.remove(review);
         review.setUsuario(null);
+    }
+    public void adicionarObra(Obra obra){
+        this.obras.add(obra);
+        obra.setUsuario(this);
+    }
+    public void removerObra(Obra obra){
+        this.obras.remove(obra);
+        obra.setUsuario(null);
     }
 
     @Override
