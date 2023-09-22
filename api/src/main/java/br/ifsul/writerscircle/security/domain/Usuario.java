@@ -1,6 +1,7 @@
 package br.ifsul.writerscircle.security.domain;
 
 import br.ifsul.writerscircle.domain.Genero;
+import br.ifsul.writerscircle.domain.Review;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -48,17 +49,18 @@ public class Usuario implements UserDetails {
         inverseJoinColumns = @JoinColumn(name = "genero_id"))
     private List<Genero> generos = new ArrayList<>();
 
+    @OneToMany(mappedBy = "usuario")
+    private List<Review> reviews = new ArrayList<>();
 
-//    @ManyToMany(mappedBy = "usuarios")
-//    private List<GeneroLiterario> preferencias = new ArrayList<>();
+    public void adicionarReview(Review review){
+        this.reviews.add(review);
+        review.setUsuario(this);
+    }
 
-//    @OneToMany(mappedBy = "usuario")
-//    private List<Livro> livros = new ArrayList<>();
-
-//    public void adicionarLivro(Livro livro){
-//        this.livros.add(livro);
-//        livro.setUsuario(this);
-//    }
+    public void removerReview(Review review){
+        this.reviews.remove(review);
+        review.setUsuario(null);
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

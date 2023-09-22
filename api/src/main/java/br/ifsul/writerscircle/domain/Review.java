@@ -31,7 +31,7 @@ public class Review {
     @Column(name = "data_publicacao", nullable = false)
     private LocalDateTime dataPublicacao;
     @Column(name = "imagem", nullable = false)
-    private LocalDateTime imagem;
+    private String imagem;
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
