@@ -28,6 +28,8 @@ public class Obra {
     private String descricao;
     @Column(name = "data_publicacao", nullable = false)
     private LocalDateTime dataPublicacao;
+    @Column(name = "data_alteracao")
+    private LocalDateTime dataAlteracao;
     @Column(name = "finalizado", nullable = false)
     private boolean finalizado;
     @ManyToOne

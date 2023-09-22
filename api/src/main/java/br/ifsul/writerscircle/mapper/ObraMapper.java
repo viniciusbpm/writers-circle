@@ -28,6 +28,7 @@ public class ObraMapper {
                 .titulo(entity.getTitulo())
                 .descricao(entity.getDescricao())
                 .dataPublicacao(entity.getDataPublicacao())
+                .dataAlteracao(entity.getDataAlteracao())
                 .finalizado(entity.isFinalizado())
                 .numeroPaginas(entity.getPaginas().size())
                 .generos(entity.getGeneros().stream()

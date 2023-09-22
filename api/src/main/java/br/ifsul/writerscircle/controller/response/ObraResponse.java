@@ -21,6 +21,7 @@ public class ObraResponse {
     private String titulo;
     private String descricao;
     private LocalDateTime dataPublicacao;
+    private LocalDateTime dataAlteracao;
     private boolean finalizado;
     private int numeroPaginas;
     private List<GeneroResponse> generos;
