@@ -8,6 +8,7 @@ import br.ifsul.writerscircle.security.service.GetUsuarioAutenticadoService;
 import br.ifsul.writerscircle.validator.ValidarUsuarioDonoReviewValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class RemoverReviewService {
@@ -20,6 +21,7 @@ public class RemoverReviewService {
     @Autowired
     private ValidarUsuarioDonoReviewValidator validarUsuarioDonoReviewValidator;
 
+    @Transactional
     public void remover(Long idReview){
         Usuario usuario = getUsuarioAutenticadoService.get();
         Review review = buscarReviewService.porId(idReview);

@@ -9,6 +9,7 @@ import br.ifsul.writerscircle.security.service.GetUsuarioAutenticadoService;
 import br.ifsul.writerscircle.validator.ValidarUsuarioDonoReviewValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import static br.ifsul.writerscircle.mapper.ReviewMapper.toResponse;
 
@@ -23,6 +24,7 @@ public class EditarReviewService {
     @Autowired
     private BuscarReviewService buscarReviewService;
 
+    @Transactional
     public ReviewResponse editar(ReviewRequest request, Long idReview){
         Usuario usuario = getUsuarioAutenticadoService.get();
         Review review = buscarReviewService.porId(idReview);

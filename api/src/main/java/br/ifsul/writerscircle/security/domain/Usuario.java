@@ -65,7 +65,7 @@ public class Usuario implements UserDetails {
     }
     public void adicionarObra(Obra obra){
         this.obras.add(obra);
-        obra.setUsuario(null);
+        obra.setUsuario(this);
     }
     public void removerObra(Obra obra){
         this.obras.remove(obra);

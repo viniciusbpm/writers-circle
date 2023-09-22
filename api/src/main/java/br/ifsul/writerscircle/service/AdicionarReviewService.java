@@ -9,6 +9,7 @@ import br.ifsul.writerscircle.security.service.GetUsuarioAutenticadoService;
 import br.ifsul.writerscircle.validator.ValidarNotaReviewValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import static br.ifsul.writerscircle.mapper.ReviewMapper.toEntity;
 import static br.ifsul.writerscircle.mapper.ReviewMapper.toResponse;
@@ -24,6 +25,7 @@ public class AdicionarReviewService {
     @Autowired
     private ValidarNotaReviewValidator validarNotaReviewValidator;
 
+    @Transactional
     public ReviewResponse adicionar(ReviewRequest request){
         validarNotaReviewValidator.validar(request.getNota());
         Usuario usuario = getUsuarioAutenticadoService.get();

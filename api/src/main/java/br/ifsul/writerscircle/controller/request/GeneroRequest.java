@@ -7,5 +7,4 @@ import lombok.Setter;
 @Setter
 public class GeneroRequest {
     private Long id;
-    private String nome;
 }

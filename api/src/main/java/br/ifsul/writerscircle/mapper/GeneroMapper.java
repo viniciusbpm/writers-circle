@@ -8,7 +8,6 @@ public class GeneroMapper {
     public static Genero toEntity(GeneroRequest request){
         return Genero.builder()
                 .id(request.getId())
-                .nome(request.getNome())
                 .build();
     }
 

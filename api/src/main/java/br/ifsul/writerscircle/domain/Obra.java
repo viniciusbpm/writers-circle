@@ -35,4 +35,9 @@ public class Obra {
     private Usuario usuario;
     @OneToMany(mappedBy = "obra")
     private List<Pagina> paginas = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(name = "genero_obra",
+            joinColumns = @JoinColumn(name = "obra_id"),
+            inverseJoinColumns = @JoinColumn(name = "genero_id"))
+    private List<Genero> generos = new ArrayList<>();
 }
