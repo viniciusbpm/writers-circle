@@ -34,9 +34,9 @@ public class AdicionarReviewService {
         review.setDataPublicacao(now());
         review.setUsuario(usuario);
 
-        usuario.adicionarReview(review);
-
         reviewRepository.save(review);
+
+        usuario.adicionarReview(review);
 
         return toResponse(review);
     }
