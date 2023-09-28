@@ -14,9 +14,8 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 public class ValidarSolicitacaoJaEnviadaValidator {
     public static final String MENSAGEM_SOLICITACAO_JA_ENVIADA = "Já existe uma solicitação entre esses dois usuários";
     public void validar(Usuario remetente, Usuario destinatario){
-        Optional<SolicitacaoAmizade> solicitacao = remetente.getSolicitacoes().stream()
-                .filter(solicitacaoAmizade -> solicitacaoAmizade.getDestinatario().equals(destinatario)
-                || solicitacaoAmizade.getRemetente().equals(destinatario)).findFirst();
+        Optional<SolicitacaoAmizade> solicitacao = destinatario.getSolicitacoes().stream()
+                .filter(solicitacaoAmizade -> solicitacaoAmizade.getRemetente().equals(remetente)).findFirst();
 
         if(solicitacao.isPresent()){
             throw new ResponseStatusException(BAD_REQUEST, MENSAGEM_SOLICITACAO_JA_ENVIADA);
