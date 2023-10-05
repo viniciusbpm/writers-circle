@@ -28,8 +28,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public UsuarioResponse registrar(@RequestBody @Valid UsuarioRequest request) {
-        return registrarUsuarioService.registrar(request);
+    public void registrar(@RequestBody @Valid UsuarioRequest request) {
+        registrarUsuarioService.registrar(request);
     }
 
 }

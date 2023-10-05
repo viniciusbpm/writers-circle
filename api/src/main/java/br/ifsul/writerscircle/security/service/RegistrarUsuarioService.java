@@ -1,7 +1,6 @@
 package br.ifsul.writerscircle.security.service;
 
 import br.ifsul.writerscircle.security.controller.request.UsuarioRequest;
-import br.ifsul.writerscircle.security.controller.response.UsuarioResponse;
 import br.ifsul.writerscircle.security.domain.Usuario;
 import br.ifsul.writerscircle.security.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.validation.Valid;
 
 import static br.ifsul.writerscircle.security.mapper.UsuarioMapper.toEntity;
-import static br.ifsul.writerscircle.security.mapper.UsuarioMapper.toResponse;
 
 @Service
 public class RegistrarUsuarioService {
@@ -26,7 +24,7 @@ public class RegistrarUsuarioService {
     private ValidarUsernameUnicoService validarUsernameUnicoService;
 
     @Transactional
-    public UsuarioResponse registrar(@Valid UsuarioRequest request){
+    public void registrar(@Valid UsuarioRequest request){
         validarEmailUnicoService.validar(request.getEmail());
         validarUsernameUnicoService.validar(request.getUsername());
 
@@ -34,8 +32,6 @@ public class RegistrarUsuarioService {
         user.setSenha(passwordEncoder.encode(request.getSenha()));
 
         usuarioRepository.save(user);
-
-        return toResponse(user);
     }
 
 }

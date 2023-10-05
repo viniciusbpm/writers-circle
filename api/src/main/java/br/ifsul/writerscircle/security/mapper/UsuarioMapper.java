@@ -10,6 +10,7 @@ public class UsuarioMapper {
                 .id(usuario.getId())
                 .username(usuario.getUsername())
                 .email(usuario.getEmail())
+                .dataNascimento(usuario.getDataNascimento())
                 .build();
     }
 

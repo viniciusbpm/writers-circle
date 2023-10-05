@@ -9,10 +9,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UsuarioResponse {
+public class UsuarioResumidoResponse {
     private Long id;
     private String username;
-    private String email;
-    private LocalDate dataNascimento;
-    private String token;
 }

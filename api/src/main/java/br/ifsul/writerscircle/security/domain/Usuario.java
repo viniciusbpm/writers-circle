@@ -1,6 +1,6 @@
 package br.ifsul.writerscircle.security.domain;
 
-import br.ifsul.writerscircle.domain.Genero;
+import br.ifsul.writerscircle.domain.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -48,17 +48,38 @@ public class Usuario implements UserDetails {
         inverseJoinColumns = @JoinColumn(name = "genero_id"))
     private List<Genero> generos = new ArrayList<>();
 
+    @OneToMany(mappedBy = "usuario")
+    private List<Review> reviews = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario")
+    private List<Obra> obras = new ArrayList<>();
+    @OneToMany(mappedBy = "destinatario")
+    private List<SolicitacaoAmizade> solicitacoes = new ArrayList<>();
 
-//    @ManyToMany(mappedBy = "usuarios")
-//    private List<GeneroLiterario> preferencias = new ArrayList<>();
+    public void adicionarReview(Review review){
+        this.reviews.add(review);
+        review.setUsuario(this);
+    }
+    public void removerReview(Review review){
+        this.reviews.remove(review);
+        review.setUsuario(null);
+    }
+    public void adicionarObra(Obra obra){
+        this.obras.add(obra);
+        obra.setUsuario(this);
+    }
+    public void removerObra(Obra obra){
+        this.obras.remove(obra);
+        obra.setUsuario(null);
+    }
 
-//    @OneToMany(mappedBy = "usuario")
-//    private List<Livro> livros = new ArrayList<>();
-
-//    public void adicionarLivro(Livro livro){
-//        this.livros.add(livro);
-//        livro.setUsuario(this);
-//    }
+    public void adicionarSolicitacao(SolicitacaoAmizade solicitacaoAmizade){
+        this.solicitacoes.add(solicitacaoAmizade);
+        solicitacaoAmizade.getRemetente().solicitacoes.add(solicitacaoAmizade);
+    }
+    public void removerSolicitacao(SolicitacaoAmizade solicitacaoAmizade){
+        this.solicitacoes.remove(solicitacaoAmizade);
+        solicitacaoAmizade.getRemetente().solicitacoes.remove(solicitacaoAmizade);
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
