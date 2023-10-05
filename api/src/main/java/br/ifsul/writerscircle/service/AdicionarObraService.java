@@ -34,8 +34,6 @@ public class AdicionarObraService {
         Usuario usuario = getUsuarioAutenticadoService.get();
         Obra obra = ObraMapper.toEntity(request);
 
-        usuario.adicionarObra(obra);
-
         List<Genero> generos = request.getGeneros().stream()
                 .map(genero -> buscarGeneroService.porId(genero.getId()))
                 .collect(toList());
@@ -43,6 +41,8 @@ public class AdicionarObraService {
         obra.setGeneros(generos);
 
         obraRepository.save(obra);
+
+        usuario.adicionarObra(obra);
 
         ObraResponse response = toResponse(obra);
 
