@@ -1,5 +1,6 @@
 package br.ifsul.writerscircle.controller.response;
 
+import br.ifsul.writerscircle.security.controller.response.UsuarioAmizadeResponse;
 import br.ifsul.writerscircle.security.controller.response.UsuarioResumidoResponse;
 import lombok.*;
 
@@ -10,6 +11,6 @@ import lombok.*;
 @Setter
 public class AmizadeResponse {
     private Long id;
-    private UsuarioResumidoResponse primeiroUsuario;
-    private UsuarioResumidoResponse segundoUsuario;
+    private UsuarioAmizadeResponse primeiroUsuario;
+    private UsuarioAmizadeResponse segundoUsuario;
 }
