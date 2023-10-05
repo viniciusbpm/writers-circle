@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-public class SolicitacaoAmizadeRequest {
+public class IdRequest {
     @NotNull
-    private Long idDestinatario;
+    private Long id;
 }

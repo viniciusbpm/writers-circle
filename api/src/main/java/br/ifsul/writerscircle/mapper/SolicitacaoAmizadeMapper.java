@@ -1,6 +1,5 @@
 package br.ifsul.writerscircle.mapper;
 
-import br.ifsul.writerscircle.controller.request.SolicitacaoAmizadeRequest;
 import br.ifsul.writerscircle.controller.response.SolicitacaoAmizadeResponse;
 import br.ifsul.writerscircle.domain.SolicitacaoAmizade;
 import br.ifsul.writerscircle.security.mapper.UsuarioResumidoMapper;

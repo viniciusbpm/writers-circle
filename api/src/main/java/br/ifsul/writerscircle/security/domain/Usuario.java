@@ -1,9 +1,6 @@
 package br.ifsul.writerscircle.security.domain;
 
-import br.ifsul.writerscircle.domain.Genero;
-import br.ifsul.writerscircle.domain.Obra;
-import br.ifsul.writerscircle.domain.Review;
-import br.ifsul.writerscircle.domain.SolicitacaoAmizade;
+import br.ifsul.writerscircle.domain.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -57,11 +54,6 @@ public class Usuario implements UserDetails {
     private List<Obra> obras = new ArrayList<>();
     @OneToMany(mappedBy = "destinatario")
     private List<SolicitacaoAmizade> solicitacoes = new ArrayList<>();
-    @ManyToMany
-    @JoinTable(name = "amizade",
-            joinColumns = @JoinColumn(name = "primeiro_usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "segundo_usuario_id"))
-    private List<Usuario> amigos = new ArrayList<>();
 
     public void adicionarReview(Review review){
         this.reviews.add(review);
@@ -79,14 +71,7 @@ public class Usuario implements UserDetails {
         this.obras.remove(obra);
         obra.setUsuario(null);
     }
-    public void adicionarAmigo(Usuario usuario){
-        this.amigos.add(usuario);
-        usuario.amigos.add(this);
-    }
-    public void removerAmigo(Usuario usuario){
-        this.amigos.remove(usuario);
-        usuario.amigos.remove(this);
-    }
+
     public void adicionarSolicitacao(SolicitacaoAmizade solicitacaoAmizade){
         this.solicitacoes.add(solicitacaoAmizade);
         solicitacaoAmizade.getRemetente().solicitacoes.add(solicitacaoAmizade);
