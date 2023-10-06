@@ -31,6 +31,8 @@ public class Usuario implements UserDetails {
     private String senha;
     @Column(name = "data_nascimento", nullable = false)
     private LocalDate dataNascimento;
+    @Column(name = "data_criacao", nullable = false)
+    private LocalDate dataCriacao;
     @Column(name = "imagem_perfil")
     private String imagemPerfil;
     @Column(name = "token_senha")

@@ -1,9 +1,9 @@
 package br.ifsul.writerscircle.security.service;
 
 import br.ifsul.writerscircle.security.controller.request.LoginRequest;
-import br.ifsul.writerscircle.security.controller.response.UsuarioResponse;
+import br.ifsul.writerscircle.security.controller.response.LoginResponse;
 import br.ifsul.writerscircle.security.domain.Usuario;
-import br.ifsul.writerscircle.security.mapper.UsuarioMapper;
+import br.ifsul.writerscircle.security.mapper.LoginMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,7 +23,7 @@ public class LoginService {
     private TokenService tokenService;
     private static final String CREDENCIAIS_INVALIDAS = "Email ou senha inválida";
 
-    public UsuarioResponse login(LoginRequest loginRequest) {
+    public LoginResponse login(LoginRequest loginRequest) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword());
 
@@ -33,7 +33,7 @@ public class LoginService {
 
             var user = (Usuario) authentication.getPrincipal();
 
-            UsuarioResponse response = UsuarioMapper.toResponse(user);
+            LoginResponse response = LoginMapper.toResponse(user);
             response.setToken(tokenService.generateToken(user));
 
             return response;
