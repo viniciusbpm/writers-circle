@@ -2,7 +2,7 @@ package br.ifsul.writerscircle.security.controller;
 
 import br.ifsul.writerscircle.security.controller.request.LoginRequest;
 import br.ifsul.writerscircle.security.controller.request.UsuarioRequest;
-import br.ifsul.writerscircle.security.controller.response.UsuarioResponse;
+import br.ifsul.writerscircle.security.controller.response.LoginResponse;
 import br.ifsul.writerscircle.security.service.LoginService;
 import br.ifsul.writerscircle.security.service.RegistrarUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class AuthController {
     private RegistrarUsuarioService registrarUsuarioService;
 
     @PostMapping("/login")
-    public UsuarioResponse login(@RequestBody LoginRequest request) {
+    public LoginResponse login(@RequestBody LoginRequest request) {
         return loginService.login(request);
     }
 
