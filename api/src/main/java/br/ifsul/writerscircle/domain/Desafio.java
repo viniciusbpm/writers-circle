@@ -34,6 +34,8 @@ public class Desafio {
     private LocalDateTime dataFinal;
     @Column(name = "comunidade", nullable = false)
     private boolean comunidade;
+    @Column(name = "aprovado", nullable = false)
+    private boolean aprovado;
     @OneToMany(mappedBy = "desafio")
     private List<RespostaDesafio> respostas = new ArrayList<>();
     @ManyToOne
@@ -44,7 +46,7 @@ public class Desafio {
         this.respostas.add(respostaDesafio);
         respostaDesafio.setDesafio(this);
     }
-    
+
     public void removerResposta(RespostaDesafio respostaDesafio){
         this.respostas.remove(respostaDesafio);
         respostaDesafio.setDesafio(null);
