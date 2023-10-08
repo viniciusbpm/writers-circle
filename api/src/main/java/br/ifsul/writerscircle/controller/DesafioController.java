@@ -27,7 +27,10 @@ public class DesafioController {
     private ResponderDesafioService responderDesafioService;
     @Autowired
     private SugerirDesafioService sugerirDesafioService;
-    
+    @Autowired
+    private AdicionarDesafioService adicionarDesafioService;
+
+
     @GetMapping
     public List<DesafioResponse> listarAprovados(){
         return listarDesafiosAprovadosService.listar();
@@ -57,9 +60,15 @@ public class DesafioController {
     public void responder(@PathVariable Long idDesafio, @RequestBody RespostaDesafioRequest request){
         responderDesafioService.responder(idDesafio, request);
     }
-    
+
+    @PostMapping("adicionar")
+    public DesafioResponse adicionar(@RequestBody DesafioRequest request){
+        return adicionarDesafioService.adicionar(request);
+    }
+
     @PostMapping("sugerir")
     public DesafioResponse sugerir(@RequestBody DesafioRequest request){
         return sugerirDesafioService.sugerir(request);
     }
+
 }
