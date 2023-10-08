@@ -1,5 +1,6 @@
 package br.ifsul.writerscircle.controller;
 
+import br.ifsul.writerscircle.controller.request.DesafioRequest;
 import br.ifsul.writerscircle.controller.request.RespostaDesafioRequest;
 import br.ifsul.writerscircle.controller.response.DesafioResponse;
 import br.ifsul.writerscircle.controller.response.RespostaDesafioResponse;
@@ -24,6 +25,8 @@ public class DesafioController {
     private ListarRespostasDesafioService listarRespostasDesafioService;
     @Autowired
     private ResponderDesafioService responderDesafioService;
+    @Autowired
+    private SugerirDesafioService sugerirDesafioService;
     
     @GetMapping
     public List<DesafioResponse> listarAprovados(){
@@ -53,5 +56,10 @@ public class DesafioController {
     @PostMapping("{idDesafio}/responder")
     public void responder(@PathVariable Long idDesafio, @RequestBody RespostaDesafioRequest request){
         responderDesafioService.responder(idDesafio, request);
+    }
+    
+    @PostMapping("sugerir")
+    public DesafioResponse sugerir(@RequestBody DesafioRequest request){
+        return sugerirDesafioService.sugerir(request);
     }
 }
