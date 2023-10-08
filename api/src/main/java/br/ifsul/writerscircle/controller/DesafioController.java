@@ -29,6 +29,8 @@ public class DesafioController {
     private SugerirDesafioService sugerirDesafioService;
     @Autowired
     private AdicionarDesafioService adicionarDesafioService;
+    @Autowired
+    private RemoverDesafioService removerDesafioService;
 
 
     @GetMapping
@@ -69,6 +71,11 @@ public class DesafioController {
     @PostMapping("sugerir")
     public DesafioResponse sugerir(@RequestBody DesafioRequest request){
         return sugerirDesafioService.sugerir(request);
+    }
+
+    @DeleteMapping("{idDesafio}")
+    public void remover(@PathVariable Long idDesafio){
+        removerDesafioService.remover(idDesafio);
     }
 
 }
