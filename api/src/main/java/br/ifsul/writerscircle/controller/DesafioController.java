@@ -1,6 +1,7 @@
 package br.ifsul.writerscircle.controller;
 
 import br.ifsul.writerscircle.controller.response.DesafioResponse;
+import br.ifsul.writerscircle.service.AprovarDesafioService;
 import br.ifsul.writerscircle.service.DetalharDesafioService;
 import br.ifsul.writerscircle.service.ListarDesafiosAprovadosService;
 import br.ifsul.writerscircle.service.ListarDesafiosPendentesService;
@@ -18,6 +19,8 @@ public class DesafioController {
     private ListarDesafiosPendentesService listarDesafiosPendentesService;
     @Autowired
     private DetalharDesafioService detalharDesafioService;
+    @Autowired
+    private AprovarDesafioService aprovarDesafioService;
     
     @GetMapping
     public List<DesafioResponse> listarAprovados(){
@@ -30,6 +33,10 @@ public class DesafioController {
     @GetMapping("{idDesafio}")
     public DesafioResponse detalhar(@PathVariable Long idDesafio){
         return detalharDesafioService.detalhar(idDesafio);
+    }
+    @PutMapping("aprovar/{idDesafio}")
+    public void aprovar(@PathVariable Long idDesafio){
+        aprovarDesafioService.aprovar(idDesafio);
     }
 
 }
