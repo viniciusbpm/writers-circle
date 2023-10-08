@@ -8,17 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-import static java.time.LocalDateTime.now;
 import static java.util.stream.Collectors.toList;
 
 @Service
-public class ListarDesafiosService {
+public class ListarDesafiosPendentesService {
     @Autowired
     private DesafioRepository desafioRepository;
 
     public List<DesafioResponse> listar(){
-        List<Desafio> desafios = desafioRepository.findAllByDataFinalAfterAndAprovado(now(), true);
+        List<Desafio> desafios = desafioRepository.findAllByAprovadoFalseOrderByDataPublicacaoDesc();
 
         return desafios.stream()
                 .map(DesafioMapper::toResponse)

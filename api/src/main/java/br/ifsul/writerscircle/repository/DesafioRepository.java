@@ -7,5 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface DesafioRepository extends JpaRepository<Desafio, Long> {
-    List<Desafio> findAllByDataFinalAfterAndAprovado(LocalDateTime dataFinal, boolean aprovado);
+    List<Desafio> findAllByDataFinalAfterAndAprovadoTrue(LocalDateTime dataFinal);
+    List<Desafio> findAllByAprovadoFalseOrderByDataPublicacaoDesc();
+
 }

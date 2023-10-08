@@ -30,7 +30,7 @@ public class Desafio {
     private String imagem;
     @Column(name = "data_publicacao", nullable = false)
     private LocalDateTime dataPublicacao;
-    @Column(name = "data_final", nullable = false)
+    @Column(name = "data_final")
     private LocalDateTime dataFinal;
     @Column(name = "comunidade", nullable = false)
     private boolean comunidade;
