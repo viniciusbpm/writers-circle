@@ -22,6 +22,8 @@ public class SugerirDesafioService {
     private GetUsuarioAutenticadoService getUsuarioAutenticadoService;
     @Autowired
     private DesafioRepository desafioRepository;
+    @Autowired
+    private BuscarGeneroService buscarGeneroService;
     public DesafioResponse sugerir(DesafioRequest request){
         Usuario usuario = getUsuarioAutenticadoService.get();
         Desafio desafio = toEntity(request);
@@ -30,6 +32,8 @@ public class SugerirDesafioService {
         desafio.setAprovado(false);
         desafio.setComunidade(true);
         desafio.setDataPublicacao(now());
+        desafio.setGenero(buscarGeneroService.porId(request.getGenero().getId()));
+
 
         desafioRepository.save(desafio);
 

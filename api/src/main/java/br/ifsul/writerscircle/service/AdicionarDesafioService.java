@@ -5,6 +5,7 @@ import br.ifsul.writerscircle.controller.response.DesafioResponse;
 import br.ifsul.writerscircle.domain.Desafio;
 import br.ifsul.writerscircle.mapper.DesafioMapper;
 import br.ifsul.writerscircle.repository.DesafioRepository;
+import br.ifsul.writerscircle.repository.GeneroRepository;
 import br.ifsul.writerscircle.security.domain.Usuario;
 import br.ifsul.writerscircle.security.service.GetUsuarioAutenticadoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class AdicionarDesafioService {
     private GetUsuarioAutenticadoService getUsuarioAutenticadoService;
     @Autowired
     private DesafioRepository desafioRepository;
+    @Autowired
+    private BuscarGeneroService buscarGeneroService;
     public static final int DIAS_DESAFIO_DISPONIVEL = 7;
 
     public DesafioResponse adicionar(DesafioRequest request){
@@ -33,6 +36,7 @@ public class AdicionarDesafioService {
         desafio.setDataFinal(now().plusDays(DIAS_DESAFIO_DISPONIVEL));
         desafio.setComunidade(false);
         desafio.setAprovado(true);
+        desafio.setGenero(buscarGeneroService.porId(request.getGenero().getId()));
 
         desafioRepository.save(desafio);
 

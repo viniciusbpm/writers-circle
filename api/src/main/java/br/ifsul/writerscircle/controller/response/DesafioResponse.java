@@ -22,6 +22,7 @@ public class DesafioResponse {
     private String descricao;
     private String autor;
     private String imagem;
+    private String genero;
     private LocalDateTime dataPublicacao;
     private LocalDateTime dataFinal;
     private boolean comunidade;

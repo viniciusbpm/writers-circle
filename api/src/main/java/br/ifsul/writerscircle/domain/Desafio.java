@@ -39,6 +39,9 @@ public class Desafio {
     @OneToMany(mappedBy = "desafio")
     private List<RespostaDesafio> respostas = new ArrayList<>();
     @ManyToOne
+    @JoinColumn(name = "genero_id", nullable = false)
+    private Genero genero;
+    @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 

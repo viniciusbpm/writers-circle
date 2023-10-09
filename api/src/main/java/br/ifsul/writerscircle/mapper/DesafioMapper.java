@@ -21,6 +21,7 @@ public class DesafioMapper {
                 .titulo(entity.getTitulo())
                 .descricao(entity.getDescricao())
                 .autor(entity.getUsuario().getUsername())
+                .genero(entity.getGenero().getNome())
                 .comunidade(entity.isComunidade())
                 .dataPublicacao(entity.getDataPublicacao())
                 .dataFinal(entity.getDataFinal())

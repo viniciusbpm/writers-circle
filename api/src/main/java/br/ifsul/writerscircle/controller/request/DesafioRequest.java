@@ -1,5 +1,6 @@
 package br.ifsul.writerscircle.controller.request;
 
+import br.ifsul.writerscircle.controller.response.GeneroResponse;
 import br.ifsul.writerscircle.domain.RespostaDesafio;
 import br.ifsul.writerscircle.security.domain.Usuario;
 import lombok.AllArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,4 +26,6 @@ public class DesafioRequest {
     private String descricao;
     @NotBlank
     private String imagem;
+    @NotNull
+    private GeneroRequest genero;
 }
