@@ -32,7 +32,6 @@ public class DesafioController {
     @Autowired
     private RemoverDesafioService removerDesafioService;
 
-
     @GetMapping
     public List<DesafioResponse> listarAprovados(){
         return listarDesafiosAprovadosService.listar();
@@ -48,12 +47,12 @@ public class DesafioController {
         return detalharDesafioService.detalhar(idDesafio);
     }
 
-    @GetMapping("respostas/{idDesafio}")
+    @GetMapping("{idDesafio}/respostas")
     public List<RespostaDesafioResponse> listarRespostas(@PathVariable Long idDesafio){
         return listarRespostasDesafioService.listar(idDesafio);
     }
 
-    @PutMapping("aprovar/{idDesafio}")
+    @PutMapping("{idDesafio}/aprovar")
     public void aprovar(@PathVariable Long idDesafio){
         aprovarDesafioService.aprovar(idDesafio);
     }
@@ -63,7 +62,7 @@ public class DesafioController {
         responderDesafioService.responder(idDesafio, request);
     }
 
-    @PostMapping("adicionar")
+    @PostMapping
     public DesafioResponse adicionar(@RequestBody DesafioRequest request){
         return adicionarDesafioService.adicionar(request);
     }
