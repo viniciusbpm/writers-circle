@@ -56,6 +56,8 @@ public class Usuario implements UserDetails {
     private List<Obra> obras = new ArrayList<>();
     @OneToMany(mappedBy = "destinatario")
     private List<SolicitacaoAmizade> solicitacoes = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario")
+    private List<RespostaDesafio> respostasDesafios = new ArrayList<>();
 
     public void adicionarReview(Review review){
         this.reviews.add(review);
@@ -81,6 +83,10 @@ public class Usuario implements UserDetails {
     public void removerSolicitacao(SolicitacaoAmizade solicitacaoAmizade){
         this.solicitacoes.remove(solicitacaoAmizade);
         solicitacaoAmizade.getRemetente().solicitacoes.remove(solicitacaoAmizade);
+    }
+
+    public void adicionarRespostaDesafio(RespostaDesafio respostaDesafio){
+        this.respostasDesafios.add(respostaDesafio);
     }
 
     @Override
