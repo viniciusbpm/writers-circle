@@ -44,7 +44,6 @@ public class Desafio {
 
     public void adicionarResposta(RespostaDesafio respostaDesafio){
         this.respostas.add(respostaDesafio);
-        respostaDesafio.setDesafio(this);
     }
 
     public void removerResposta(RespostaDesafio respostaDesafio){

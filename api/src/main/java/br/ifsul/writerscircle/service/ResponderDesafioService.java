@@ -31,6 +31,7 @@ public class ResponderDesafioService {
 
         respostaDesafioRepository.save(respostaDesafio);
 
+        usuario.adicionarRespostaDesafio(respostaDesafio);
         desafio.adicionarResposta(respostaDesafio);
     }
 }
