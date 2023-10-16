@@ -10,7 +10,23 @@ const useAuthFunctions = () => {
     return response.data;
   };
 
-  return { login };
+  const register = async (
+    username: string,
+    email: string,
+    password: string,
+    birthDate: Date
+  ) => {
+    const response = await axiosInstance.post('/auth/register', {
+      username: username,
+      email: email,
+      senha: password,
+      dataNascimento: birthDate,
+    });
+
+    return response.data;
+  };
+
+  return { login, register };
 };
 
 export default useAuthFunctions;
