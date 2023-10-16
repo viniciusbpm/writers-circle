@@ -1,0 +1,13 @@
+.input-box {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 5px 0;
+}
+
+.input {
+  font-family: 'Poppins';
+  width: 100%;
+  height: 35px;
+  border: 1px solid #b6b6b6;
+}
