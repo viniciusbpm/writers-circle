@@ -1,0 +1,19 @@
+.link {
+  text-decoration: underline;
+}
+
+.link-black {
+  color: #000;
+}
+
+.link-white {
+  color: #fff;
+}
+
+.link-gray {
+  color: #5b5b5b;
+}
+
+.link-red {
+  color: #f15152;
+}

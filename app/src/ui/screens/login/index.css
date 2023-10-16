@@ -1,0 +1,40 @@
+body {
+  background: #fff2f2;
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.login-left-side {
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  align-items: center;
+  width: 550px;
+  padding: 50px 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 40px 0 20px 0;
+}
+
+.login-logo {
+  width: 190px;
+}
+
+.login-right-side {
+  background: #f15152;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  padding: 80px;
+}

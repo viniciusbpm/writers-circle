@@ -1,0 +1,31 @@
+.title-small {
+  font-size: 24px;
+}
+
+.title-medium {
+  font-size: 30px;
+}
+
+.title-large {
+  font-size: 40px;
+}
+
+.title-white {
+  color: #fff;
+}
+
+.title-red {
+  color: #f15152;
+}
+
+.title-gray {
+  color: #5b5b5b;
+}
+
+.title-bold {
+  font-weight: bold;
+}
+
+.title-normal {
+  font-weight: normal;
+}
