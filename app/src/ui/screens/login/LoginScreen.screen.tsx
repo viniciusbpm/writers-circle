@@ -45,10 +45,9 @@ const LoginScreen = () => {
         <form className="login-form" onSubmit={handleSubmit}>
           <FormInput
             label="Username:"
-            type="email"
-            name="email"
-            id="email"
-            className="login-input"
+            type="text"
+            name="username"
+            id="username"
             onChange={handleChange}
             required
           />
@@ -57,14 +56,13 @@ const LoginScreen = () => {
             type="password"
             name="password"
             id="password"
-            className="login-input"
             onChange={handleChange}
             required
           />
-          <Button type="primary" content="Entrar" />
+          <Button type="primary">Entrar</Button>
         </form>
         <p>
-          Não possui uma conta? <Link path="/">Cadastre-se</Link>
+          Não possui uma conta? <Link path="/register">Cadastre-se</Link>
         </p>
       </div>
       <div className="login-right-side">

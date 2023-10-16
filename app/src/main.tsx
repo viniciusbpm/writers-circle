@@ -4,11 +4,16 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginScreen from './ui/screens/login/LoginScreen.screen';
 import { Toaster } from 'react-hot-toast';
+import RegisterScreen from './ui/screens/register/RegisterScreen.screen';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LoginScreen />,
+  },
+  {
+    path: '/register',
+    element: <RegisterScreen />,
   },
 ]);
 
