@@ -4,11 +4,20 @@ interface ComponentProps {
   type: 'primary' | 'secondary';
   children: string;
   className?: string;
-  // onClick?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const Button = ({ type = 'primary', children, className }: ComponentProps) => {
-  return <button className={`${type}-button ${className}`}>{children}</button>;
+const Button = ({
+  type = 'primary',
+  children,
+  className,
+  onClick,
+}: ComponentProps) => {
+  return (
+    <button className={`button ${type}-button ${className}`} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
