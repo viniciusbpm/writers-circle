@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginScreen from './ui/screens/login/LoginScreen.screen';
 import { Toaster } from 'react-hot-toast';
 import RegisterScreen from './ui/screens/register/RegisterScreen.screen';
+import ProfileConfigScreen from './ui/screens/profile-config/ProfileConfigScreen.screen';
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
     element: <LoginScreen />,
   },
   {
-    path: '/register',
+    path: '/registro',
     element: <RegisterScreen />,
+  },
+  {
+    path: '/configuracoes-perfil',
+    element: <ProfileConfigScreen />,
   },
 ]);
 
