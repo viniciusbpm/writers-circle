@@ -11,10 +11,25 @@
 .primary-button {
   background: #f15152;
   color: #fff;
+  transition-duration: 0.2s;
+}
+
+.primary-button:hover {
+  transition-duration: 0.2s;
+  border: 1px solid #f15152;
+  color: #f15152;
+  background: #fff;
 }
 
 .secondary-button {
   border: 1px solid #f15152;
   color: #f15152;
   background: #fff;
+  transition-duration: 0.2s;
+}
+
+.secondary-button:hover {
+  transition-duration: 0.2s;
+  background: #f15152;
+  color: #fff;
 }
