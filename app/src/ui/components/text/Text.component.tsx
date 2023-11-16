@@ -7,7 +7,7 @@ interface ComponentProps {
 }
 
 const Text = ({ children, className, color = 'black' }: ComponentProps) => {
-  return <p className={`${className} text-${color}`}>{children}</p>;
+  return <p className={`text ${className} text-${color}`}>{children}</p>;
 };
 
 export default Text;
