@@ -1,0 +1,48 @@
+.challenge-box {
+  border: 1px solid #a0a0a0;
+  width: 60%;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+}
+
+.challenge-image {
+  width: 150px;
+  height: 150px;
+}
+
+.challenge-text {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.challenge-time-left {
+  display: flex;
+  align-items: center;
+}
+
+.challenge-time-left > img {
+  width: 20px;
+  margin-right: 3px;
+}
+
+.challenge-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.enter-challenge-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.enter-challenge-text {
+  margin-right: 5px;
+  font-size: 15px;
+}

@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import RegisterScreen from './ui/screens/register/RegisterScreen.screen';
 import ProfileConfigScreen from './ui/screens/profile-config/ProfileConfigScreen.screen';
 import CommunityScreen from './ui/screens/community/CommunityScreen.screen';
+import ChallengesScreen from './ui/screens/challenges/ChallengesScreen.screen';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/comunidade',
     element: <CommunityScreen />,
+  },
+  {
+    path: '/desafios',
+    element: <ChallengesScreen />,
   },
 ]);
 
