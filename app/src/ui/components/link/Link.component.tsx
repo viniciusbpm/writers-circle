@@ -5,6 +5,7 @@ interface ComponentProps {
   color?: 'white' | 'red' | 'gray' | 'black';
   path: string;
   className?: string;
+  underline?: boolean;
 }
 
 const Link = ({
@@ -12,9 +13,15 @@ const Link = ({
   color = 'black',
   path,
   className = '',
+  underline,
 }: ComponentProps) => {
   return (
-    <a href={path} className={`link ${className} link-${color}`}>
+    <a
+      href={path}
+      className={`link ${className} link-${color} ${
+        underline ? 'link-underline' : ''
+      }`}
+    >
       {children}
     </a>
   );

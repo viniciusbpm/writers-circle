@@ -95,7 +95,10 @@ const RegisterScreen = () => {
           <Button type="primary">Registrar</Button>
         </form>
         <p>
-          Já possui uma conta? <Link path="/">Fazer login</Link>
+          Já possui uma conta?{' '}
+          <Link path="/" underline>
+            Fazer login
+          </Link>
         </p>
       </div>
       <div className="login-right-side">
