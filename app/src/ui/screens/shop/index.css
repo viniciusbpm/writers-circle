@@ -1,0 +1,27 @@
+.shop-content {
+  padding: 0px 130px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.shop-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+
+.shop-user-ink {
+  display: flex;
+  align-items: center;
+}
+
+.shop-user-ink-image {
+  margin-right: 5px;
+  width: 25px;
+}
+
+.shop-user-ink-text {
+  font-size: 20px;
+}

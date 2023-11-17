@@ -22,7 +22,7 @@ const NavBar = ({ currentPage }: ComponentProps) => {
           Comunidade
         </Link>
         <Link
-          path="/comunidade"
+          path="/desafios"
           color="white"
           className={`nav-bar-item ${
             currentPage === 'desafios' ? 'current-page' : ''
@@ -31,7 +31,7 @@ const NavBar = ({ currentPage }: ComponentProps) => {
           Desafios
         </Link>
         <Link
-          path="/comunidade"
+          path="/loja"
           color="white"
           className={`nav-bar-item ${
             currentPage === 'loja' ? 'current-page' : ''
@@ -40,7 +40,7 @@ const NavBar = ({ currentPage }: ComponentProps) => {
           Loja
         </Link>
         <Link
-          path="/comunidade"
+          path="/minha=area"
           color="white"
           className={`nav-bar-item ${
             currentPage === 'minha-area' ? 'current-page' : ''

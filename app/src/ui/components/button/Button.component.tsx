@@ -2,7 +2,7 @@ import './index.css';
 
 interface ComponentProps {
   type: 'primary' | 'secondary';
-  children: string;
+  children: string | JSX.Element[];
   className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
@@ -10,7 +10,7 @@ interface ComponentProps {
 const Button = ({
   type = 'primary',
   children,
-  className,
+  className = '',
   onClick,
 }: ComponentProps) => {
   return (
