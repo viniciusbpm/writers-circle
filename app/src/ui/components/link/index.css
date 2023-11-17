@@ -1,5 +1,5 @@
 .link {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .link-black {
@@ -16,4 +16,8 @@
 
 .link-red {
   color: #f15152;
+}
+
+.link-underline {
+  text-decoration: underline;
 }

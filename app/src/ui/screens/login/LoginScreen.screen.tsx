@@ -62,7 +62,10 @@ const LoginScreen = () => {
           <Button type="primary">Entrar</Button>
         </form>
         <p>
-          Não possui uma conta? <Link path="/registro">Cadastre-se</Link>
+          Não possui uma conta?{' '}
+          <Link path="/registro" underline>
+            Cadastre-se
+          </Link>
         </p>
       </div>
       <div className="login-right-side">
