@@ -1,0 +1,44 @@
+.item-container {
+  margin: 40px 20px;
+  width: 250px;
+}
+
+.shop-item-button {
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.shop-item-name {
+  font-size: 22px;
+}
+
+.shop-item-button:hover {
+  background: #d71717;
+  border: none;
+}
+
+.shop-item-brush {
+  margin-right: 5px;
+}
+
+.shop-item-price {
+  color: #fff;
+}
+
+.shop-item-acquired {
+  background: #fff;
+  border: 1px solid #f15152;
+}
+
+.shop-item-acquired:hover {
+  background: #fff;
+  border: 1px solid #f15152;
+  cursor: not-allowed;
+}
+
+.shop-item-acquired p {
+  color: #f15152;
+}
