@@ -1,0 +1,6 @@
+.user-details-info-box {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  margin: 10px 20px;
+}

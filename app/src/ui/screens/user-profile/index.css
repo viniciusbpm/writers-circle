@@ -30,9 +30,11 @@
   align-items: center;
   background: none;
   border: none;
+  cursor: pointer;
+  padding: 10px 0;
 }
 
 .user-profile-info-link {
-  margin-right: 5px;
+  margin-right: 10px;
   font-size: 15px;
 }

@@ -11,6 +11,7 @@ import ChallengesScreen from './ui/screens/challenges/ChallengesScreen.screen';
 import ShopScreen from './ui/screens/shop/ShopScreen.screen';
 import ChallengeDetailsScreen from './ui/screens/challenge-details/ChallengeDetailsScreen.screen';
 import UserProfileScreen from './ui/screens/user-profile/UserProfileScreen.screen';
+import UserDetailsScreen from './ui/screens/user-details/UserDetailsScreen.screen';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: '/usuario/idUsuario',
     element: <UserProfileScreen />,
+  },
+  {
+    path: '/usuario/idUsuario/detalhes',
+    element: <UserDetailsScreen />,
   },
 ]);
 
