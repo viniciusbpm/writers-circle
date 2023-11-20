@@ -3,8 +3,8 @@ import Button from '../button/Button.component';
 import './index.css';
 import Post from '../post/Post.component';
 
-const UserProfileNavBar = () => {
-  const [currentPage, setCurrentPage] = useState('');
+const UserProfileRightSide = () => {
+  const [currentPage, setCurrentPage] = useState('Publicações');
 
   const handleClickEvent = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -70,9 +70,15 @@ const UserProfileNavBar = () => {
           imageUrl="https://images.mubicdn.net/images/cast_member/3686/cache-6742-1650540236/image-w856.jpg?size=800x"
           className="user-profile-post"
         />
+        <Post
+          title="post jamais visto"
+          description="jamais"
+          imageUrl="https://images.mubicdn.net/images/cast_member/3686/cache-6742-1650540236/image-w856.jpg?size=800x"
+          className="user-profile-post"
+        />
       </div>
     </div>
   );
 };
 
-export default UserProfileNavBar;
+export default UserProfileRightSide;

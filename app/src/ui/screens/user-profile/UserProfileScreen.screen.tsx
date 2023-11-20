@@ -1,5 +1,5 @@
 import NavBar from '../../components/nav-bar/NavBar.component';
-import UserProfileNavBar from '../../components/user-profile-nav-bar/UserProfileNavBar.component';
+import UserProfileRightSide from '../../components/user-profile-right-side/UserProfileRightSide.component';
 import './index.css';
 import userPlaceholder from '../../../assets/img/user-placeholder.png';
 import Title from '../../components/title/Title.component';
@@ -7,8 +7,15 @@ import brush from '../../../assets/img/brush-icon.svg';
 import redArrow from '../../../assets/img/red-arrow-icon.svg';
 import Text from '../../components/text/Text.component';
 import Link from '../../components/link/Link.component';
+import { useNavigate } from 'react-router-dom';
 
 const UserProfileScreen = () => {
+  const navigate = useNavigate();
+
+  const handleClickEvent = () => {
+    navigate('/usuario/idUsuario/detalhes');
+  };
+
   return (
     <div className="user-profile-box">
       <NavBar currentPage="minha-area" />
@@ -24,14 +31,17 @@ const UserProfileScreen = () => {
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
           </Text>
-          <button className="user-profile-info-button">
-            <Link path="" color="red" className="user-profile-info-link">
+          <button
+            className="user-profile-info-button"
+            onClick={handleClickEvent}
+          >
+            <Text color="red" className="user-profile-info-link">
               Ver mais
-            </Link>
+            </Text>
             <img src={redArrow} />
           </button>
         </div>
-        <UserProfileNavBar />
+        <UserProfileRightSide />
       </div>
     </div>
   );
