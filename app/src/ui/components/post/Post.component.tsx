@@ -7,11 +7,17 @@ interface ComponentProps {
   title: string;
   description: string;
   imageUrl: string;
+  className?: string;
 }
 
-const Post = ({ title, description, imageUrl }: ComponentProps) => {
+const Post = ({
+  title,
+  description,
+  imageUrl,
+  className = '',
+}: ComponentProps) => {
   return (
-    <div className="post-box">
+    <div className={`post-box ${className}`}>
       <div className="post-author"></div>
       <div className="post-content">
         <img className="post-image" src={imageUrl} alt={title} />

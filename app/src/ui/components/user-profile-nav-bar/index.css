@@ -1,0 +1,36 @@
+.user-profile-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-profile-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-profile-nav-bar-button {
+  border: none;
+  background: none;
+  color: #f15152;
+}
+
+.user-profile-nav-bar-button:hover {
+  border: none;
+}
+
+.user-profile-nav-bar-current-page {
+  text-decoration: underline;
+}
+
+.user-profile-right-side-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+}
+
+.user-profile-post {
+  margin-bottom: 50px;
+}

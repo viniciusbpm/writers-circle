@@ -1,0 +1,38 @@
+.user-profile-content {
+  padding: 40px 120px;
+  display: flex;
+}
+
+.user-profile-info {
+  width: 17%;
+}
+
+.user-profile-info-image {
+  max-width: 100%;
+}
+
+.user-profile-info-bio {
+  margin: 10px 0;
+}
+
+.user-profile-info-ink {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-info-ink img {
+  width: 21px;
+  margin-right: 3px;
+}
+
+.user-profile-info-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+}
+
+.user-profile-info-link {
+  margin-right: 5px;
+  font-size: 15px;
+}
