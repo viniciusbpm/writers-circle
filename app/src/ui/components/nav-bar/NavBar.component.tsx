@@ -40,7 +40,7 @@ const NavBar = ({ currentPage }: ComponentProps) => {
           Loja
         </Link>
         <Link
-          path="/minha=area"
+          path="/usuario/idUsuario"
           color="white"
           className={`nav-bar-item ${
             currentPage === 'minha-area' ? 'current-page' : ''

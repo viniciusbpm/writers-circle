@@ -10,6 +10,7 @@ import CommunityScreen from './ui/screens/community/CommunityScreen.screen';
 import ChallengesScreen from './ui/screens/challenges/ChallengesScreen.screen';
 import ShopScreen from './ui/screens/shop/ShopScreen.screen';
 import ChallengeDetailsScreen from './ui/screens/challenge-details/ChallengeDetailsScreen.screen';
+import UserProfileScreen from './ui/screens/user-profile/UserProfileScreen.screen';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: '/desafio/idDesafio',
     element: <ChallengeDetailsScreen />,
+  },
+  {
+    path: '/usuario/idUsuario',
+    element: <UserProfileScreen />,
   },
 ]);
 
