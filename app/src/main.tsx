@@ -13,6 +13,7 @@ import ChallengeDetailsScreen from './ui/screens/challenge-details/ChallengeDeta
 import UserProfileScreen from './ui/screens/user-profile/UserProfileScreen.screen';
 import UserDetailsScreen from './ui/screens/user-details/UserDetailsScreen.screen';
 import ChallengeAnswersScreen from './ui/screens/challenge-answers/ChallengeAnswersScreen.screen';
+import AnswerChallengeScreen from './ui/screens/answer-challenge/AnswerChallengeScreen.screen';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: '/desafio/idDesafio/respostas',
     element: <ChallengeAnswersScreen />,
+  },
+  {
+    path: '/desafio/idDesafio/responder',
+    element: <AnswerChallengeScreen />,
   },
   {
     path: '/usuario/idUsuario',

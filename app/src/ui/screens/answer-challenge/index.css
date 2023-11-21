@@ -1,0 +1,55 @@
+.answer-challenge-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.answer-challenge-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.answer-challenge-label {
+  margin: 10px 0;
+  font-size: 20px;
+  align-self: flex-start;
+}
+
+.answer-challenge-textbox {
+  width: 100%;
+  font-family: 'Poppins';
+  padding: 10px;
+  height: 300px;
+  resize: none;
+  border: 1px solid #c5c5c5;
+}
+
+.answer-challenge-button {
+  width: 30%;
+}
+
+.challenge-title-and-description {
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.answer-challenge-title {
+  font-size: 20px;
+}
+
+.answer-challenge-description {
+  font-size: 15px;
+}
+
+.answer-challenge-title-input {
+  align-self: flex-start;
+  font-family: 'Poppins';
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #c5c5c5;
+  margin-bottom: 20px;
+}
