@@ -1,0 +1,29 @@
+.book-page-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-page-content {
+  margin-top: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-page-title {
+  margin: 20px 0;
+}
+
+.book-page-buttons {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-page-button {
+  font-size: 14px;
+}

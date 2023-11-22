@@ -15,6 +15,7 @@ import UserDetailsScreen from './ui/screens/user-details/UserDetailsScreen.scree
 import ChallengeAnswersScreen from './ui/screens/challenge-answers/ChallengeAnswersScreen.screen';
 import AnswerChallengeScreen from './ui/screens/answer-challenge/AnswerChallengeScreen.screen';
 import ArticleScreen from './ui/screens/article/ArticleScreen.screen';
+import BookPageScreen from './ui/screens/book-page/BookPageScreen.screen';
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: '/artigos/idArtigo',
     element: <ArticleScreen />,
+  },
+  {
+    path: '/obras/idObra',
+    element: <BookPageScreen />,
   },
 ]);
 
