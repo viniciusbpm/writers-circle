@@ -4,7 +4,7 @@ import logo from '../../../assets/img/nav-bar-logo.png';
 import notifications from '../../../assets/img/notificacoes.svg';
 
 interface ComponentProps {
-  currentPage: 'comunidade' | 'desafios' | 'loja' | 'minha-area';
+  currentPage?: 'comunidade' | 'desafios' | 'loja' | 'minha-area';
 }
 
 const NavBar = ({ currentPage }: ComponentProps) => {
