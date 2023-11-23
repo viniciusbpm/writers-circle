@@ -1,7 +1,7 @@
 import './index.css';
 
 interface ComponentProps {
-  children?: string;
+  children: string | JSX.Element | JSX.Element[];
   color?: 'white' | 'red' | 'gray' | 'black';
   path: string;
   className?: string;
@@ -9,7 +9,7 @@ interface ComponentProps {
 }
 
 const Link = ({
-  children = '',
+  children,
   color = 'black',
   path,
   className = '',

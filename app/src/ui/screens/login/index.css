@@ -32,8 +32,13 @@
   background: #f15152;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 600px;
   padding: 80px;
+}
+
+.login-right-side-phrase {
+  font-size: 30px;
+  margin-bottom: 10px;
 }

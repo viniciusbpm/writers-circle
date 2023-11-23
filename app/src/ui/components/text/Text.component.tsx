@@ -3,7 +3,7 @@ import './index.css';
 interface ComponentProps {
   children?: string;
   className?: string;
-  color?: 'black' | 'gray' | 'red';
+  color?: 'black' | 'gray' | 'red' | 'white';
 }
 
 const Text = ({ children, className, color = 'black' }: ComponentProps) => {
