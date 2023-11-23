@@ -10,7 +10,9 @@ interface ComponentProps {
 const NavBar = ({ currentPage }: ComponentProps) => {
   return (
     <div className="navigation-bar">
-      <img className="nav-bar-logo" src={logo} alt="Writers Circle" />
+      <Link className="nav-bar-logo-button" path="/comunidade">
+        <img className="nav-bar-logo" src={logo} alt="Writers Circle" />
+      </Link>
       <div>
         <Link
           path="/comunidade"

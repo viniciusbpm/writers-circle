@@ -30,6 +30,8 @@ public class Configurations {
                 .and().authorizeHttpRequests()
                 .antMatchers(HttpMethod.POST, "/auth/*")
                 .permitAll()
+                .antMatchers(HttpMethod.GET, "/frases/*")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and().addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
                 .build();

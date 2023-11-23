@@ -8,9 +8,11 @@ import Title from '../../components/title/Title.component';
 import Link from '../../components/link/Link.component';
 import useAuthFunctions from '../../../api/hooks/useAuthFunctions.hooks';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const LoginScreen = () => {
   const { login } = useAuthFunctions();
+  const navigate = useNavigate();
   const [loginInput, setLoginInput] = useState({
     username: { value: '' },
     password: { value: '' },
