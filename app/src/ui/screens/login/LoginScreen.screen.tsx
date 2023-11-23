@@ -1,6 +1,6 @@
 import './index.css';
 import logo from '../../../assets/img/logo.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AxiosError } from 'axios';
 import FormInput from '../../components/form-input/FormInput.component';
 import Button from '../../components/button/Button.component';
@@ -9,14 +9,19 @@ import Link from '../../components/link/Link.component';
 import useAuthFunctions from '../../../api/hooks/useAuthFunctions.hooks';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import usePhraseFunctions from '../../../api/hooks/usePhraseFunctions.hooks';
+import Text from '../../components/text/Text.component';
 
 const LoginScreen = () => {
   const { login } = useAuthFunctions();
   const navigate = useNavigate();
+  const { getRandom } = usePhraseFunctions();
   const [loginInput, setLoginInput] = useState({
     username: { value: '' },
     password: { value: '' },
   });
+  const [phrase, setPhrase] = useState('');
+  const [author, setAuthor] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.currentTarget;
@@ -39,6 +44,15 @@ const LoginScreen = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const fetchPhrase = async () => {
+      const data = await getRandom();
+      setPhrase(data.frase);
+      setAuthor(data.autor);
+    };
+    fetchPhrase();
+  }, []);
 
   return (
     <div className="login-box">
@@ -71,10 +85,15 @@ const LoginScreen = () => {
         </p>
       </div>
       <div className="login-right-side">
-        <Title type="h2" size="large" color="white" weight="normal">
-          "Escrever é esquecer. A literatura é a maneira mais agradável de
-          ignorar a vida."
+        <Title
+          type="h2"
+          color="white"
+          weight="normal"
+          className="login-right-side-phrase"
+        >
+          {phrase}
         </Title>
+        <Text color="white">{`- ${author}`}</Text>
       </div>
     </div>
   );
