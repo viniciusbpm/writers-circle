@@ -5,6 +5,7 @@ interface ComponentProps {
   children: string | JSX.Element[] | JSX.Element;
   className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -12,9 +13,16 @@ const Button = ({
   children,
   className = '',
   onClick,
+  disabled = false,
 }: ComponentProps) => {
   return (
-    <button className={`button ${type}-button ${className}`} onClick={onClick}>
+    <button
+      className={`button ${type}-button ${className} ${
+        disabled ? 'button-disabled' : ''
+      }`}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

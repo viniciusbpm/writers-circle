@@ -11,6 +11,8 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import usePhraseFunctions from '../../../api/hooks/usePhraseFunctions.hooks';
 import Text from '../../components/text/Text.component';
+import { useCookies } from 'react-cookie';
+import decode from '../../../utils/decodeJwt.util';
 
 const LoginScreen = () => {
   const { login } = useAuthFunctions();
@@ -22,6 +24,7 @@ const LoginScreen = () => {
   });
   const [phrase, setPhrase] = useState('');
   const [author, setAuthor] = useState('');
+  const [cookie, setCookie] = useCookies();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.currentTarget;
@@ -38,6 +41,16 @@ const LoginScreen = () => {
         loginInput.username.value,
         loginInput.password.value
       );
+
+      setCookie('user', user.token);
+
+      const decoded = decode(user.token);
+
+      if (decoded.usuarioNovo) {
+        navigate('/configuracoes-perfil');
+      } else {
+        navigate('/comunidade');
+      }
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error(error.response?.data.message);
