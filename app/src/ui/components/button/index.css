@@ -33,3 +33,10 @@
   background: #f15152;
   color: #fff;
 }
+
+.button-disabled:hover {
+  cursor: not-allowed;
+  background: #481919;
+  color: #fff;
+  border: none;
+}

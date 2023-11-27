@@ -17,6 +17,7 @@ public class TokenService {
                 .withIssuer("Livros")
                 .withSubject(user.getUsername())
                 .withClaim("id", user.getId())
+                .withClaim("usuarioNovo", user.getGeneros().isEmpty())
                 .withExpiresAt(LocalDateTime.now()
                         .plusMinutes(60)
                         .toInstant(ZoneOffset.of("-03:00"))

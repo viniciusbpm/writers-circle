@@ -102,7 +102,12 @@ const RegisterScreen = () => {
         </p>
       </div>
       <div className="login-right-side">
-        <Title type="h2" size="large" color="white" weight="normal">
+        <Title
+          type="h2"
+          className="login-right-side-phrase"
+          color="white"
+          weight="normal"
+        >
           Crie uma conta para começar a utilizar o Writers Circle.
         </Title>
       </div>

@@ -1,0 +1,10 @@
+.genre-search-result {
+  border: 1px solid #c5c5c5;
+  border-top: none;
+  padding: 5px;
+}
+
+.genre-search-result:hover {
+  background: #c5c5c5;
+  cursor: pointer;
+}
