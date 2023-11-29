@@ -23,7 +23,7 @@ public class ListarReviewsUsuarioService {
     public List<ReviewResponse> listar(Long idUsuario){
         Usuario usuario = buscarUsuarioService.porId(idUsuario);
 
-        List<Review> reviews = reviewRepository.findAllByUsuarioEquals(usuario);
+        List<Review> reviews = reviewRepository.findAllByUsuarioEqualsOrderByDataPublicacao(usuario);
 
         return reviews.stream()
                 .map(ReviewMapper::toResponse)

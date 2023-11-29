@@ -11,4 +11,6 @@ import lombok.*;
 public class UsuarioResumidoResponse {
     private Long id;
     private String username;
+    private String imagem;
+
 }

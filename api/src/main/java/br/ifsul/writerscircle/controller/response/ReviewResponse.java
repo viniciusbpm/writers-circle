@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class ReviewResponse {
     private Long id;
     private String titulo;
+    private String autor;
     private String obraAvaliada;
     private String conteudo;
     private double nota;

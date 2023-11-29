@@ -8,6 +8,7 @@ public class UsuarioResumidoMapper {
         return UsuarioResumidoResponse.builder()
                 .id(entity.getId())
                 .username(entity.getUsername())
+                .imagem(entity.getImagemPerfil())
                 .build();
     }
 }

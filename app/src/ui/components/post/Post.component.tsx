@@ -2,8 +2,10 @@ import Text from '../text/Text.component';
 import Title from '../title/Title.component';
 import './index.css';
 import calendar from '../../../assets/img/calendar-icon.svg';
+import Link from '../link/Link.component';
 
 interface ComponentProps {
+  id: number;
   title: string;
   description: string;
   imageUrl: string;
@@ -11,6 +13,7 @@ interface ComponentProps {
 }
 
 const Post = ({
+  id,
   title,
   description,
   imageUrl,
@@ -23,7 +26,9 @@ const Post = ({
         <img className="post-image" src={imageUrl} alt={title} />
         <div className="post-text-box">
           <div className="post-title-description-box">
-            <Title type="h3">{title}</Title>
+            <Link path={`/posts/${id}`} className="post-item-link">
+              {title}
+            </Link>
             <Text color="gray" className="post-description">
               {description}
             </Text>
@@ -31,7 +36,7 @@ const Post = ({
           <div className="post-data">
             <img src={calendar} alt="" />
             <Text className="post-data-text" color="gray">
-              Hoje às 21:00
+              asdasd
             </Text>
           </div>
         </div>

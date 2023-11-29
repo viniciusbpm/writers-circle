@@ -14,7 +14,7 @@ import UserProfileScreen from './ui/screens/user-profile/UserProfileScreen.scree
 import UserDetailsScreen from './ui/screens/user-details/UserDetailsScreen.screen';
 import ChallengeAnswersScreen from './ui/screens/challenge-answers/ChallengeAnswersScreen.screen';
 import AnswerChallengeScreen from './ui/screens/answer-challenge/AnswerChallengeScreen.screen';
-import ArticleScreen from './ui/screens/article/ArticleScreen.screen';
+import ReviewScreen from './ui/screens/review/ReviewScreen.screen';
 import BookPageScreen from './ui/screens/book-page/BookPageScreen.screen';
 
 const router = createBrowserRouter([
@@ -63,8 +63,8 @@ const router = createBrowserRouter([
     element: <UserDetailsScreen />,
   },
   {
-    path: '/artigos/idArtigo',
-    element: <ArticleScreen />,
+    path: '/posts/:postId',
+    element: <ReviewScreen />,
   },
   {
     path: '/obras/idObra',

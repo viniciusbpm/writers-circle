@@ -1,5 +1,5 @@
 .post-box {
-  max-width: 100%;
+  width: 600px;
   max-height: 160px;
   margin-bottom: 20px;
 }
@@ -12,6 +12,7 @@
 
 .post-image {
   width: 160px;
+  height: 160px;
   margin: 0;
 }
 
@@ -46,4 +47,9 @@
 .post-data-text {
   color: #5b5b5b;
   font-size: 11px;
+}
+
+.post-item-link {
+  font-weight: bold;
+  font-size: 18px;
 }

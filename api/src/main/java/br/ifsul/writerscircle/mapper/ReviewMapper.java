@@ -18,6 +18,7 @@ public class ReviewMapper {
         return ReviewResponse.builder()
                 .id(review.getId())
                 .titulo(review.getTitulo())
+                .autor(review.getUsuario().getUsername())
                 .conteudo(review.getConteudo())
                 .nota(review.getNota())
                 .obraAvaliada(review.getObraAvaliada())
